@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Labeeq Qasim</title>
+
+  <style>
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1a1a1a;
+      color: #f0f0f0;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 48px;
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    header h1 {
+      font-size: 1rem;
+      font-weight: normal;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #aaaaaa;
+    }
+
+    button#menuBtn {
+      background: none;
+      border: 1px solid #444;
+      color: #aaa;
+      padding: 7px 16px;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    button#menuBtn:hover {
+      border-color: #f0f0f0;
+      color: #f0f0f0;
+    }
+
+    nav {
+      display: none;
+      border-bottom: 1px solid #2e2e2e;
+      padding: 14px 48px;
+      background-color: #111;
+    }
+
+    nav a {
+      color: #888;
+      text-decoration: none;
+      margin-right: 28px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    nav a:hover {
+      color: #f0f0f0;
+    }
+
+    .hero {
+      padding: 80px 48px 64px;
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    .hero p#greeting {
+      font-size: 0.82rem;
+      color: #666;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #f0f0f0;
+    }
+
+    .hero p.bio {
+      font-size: 0.95rem;
+      color: #888;
+      line-height: 1.7;
+      max-width: 380px;
+    }
+
+    .games-section {
+      padding: 56px 48px;
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    .games-section h3 {
+      font-size: 0.72rem;
+      font-weight: normal;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 28px;
+    }
+
+    .games {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background-color: #2e2e2e;
+      border: 1px solid #2e2e2e;
+    }
+
+    .game-card {
+      background-color: #1a1a1a;
+      padding: 24px 20px;
+      cursor: default;
+      transition: background-color 0.2s;
+    }
+
+    .game-card:hover {
+      background-color: #f0f0f0;
+      color: #111;
+    }
+
+    .game-card:hover p {
+      color: #555;
+    }
+
+    .game-card h4 {
+      font-size: 0.92rem;
+      font-weight: bold;
+      margin-bottom: 6px;
+      color: inherit;
+    }
+
+    .game-card p {
+      font-size: 0.75rem;
+      color: #555;
+      margin: 0;
+    }
+
+    .contact-section {
+      padding: 56px 48px;
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    .contact-section h3 {
+      font-size: 0.72rem;
+      font-weight: normal;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .contact-section input {
+      display: block;
+      padding: 12px 16px;
+      width: 340px;
+      border: 1px solid #333;
+      background-color: #111;
+      font-size: 0.88rem;
+      font-family: Arial, sans-serif;
+      color: #f0f0f0;
+      outline: none;
+    }
+
+    .contact-section input::placeholder {
+      color: #444;
+    }
+
+    .contact-section input:focus {
+      border-color: #f0f0f0;
+    }
+
+    p#inputMsg {
+      margin-top: 12px;
+      font-size: 0.8rem;
+      color: #555;
+      letter-spacing: 0.02em;
+    }
+
+    .style-section {
+      padding: 56px 48px;
+      border-bottom: 1px solid #2e2e2e;
+    }
+
+    .style-section h3 {
+      font-size: 0.72rem;
+      font-weight: normal;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    #styleBox {
+      width: 340px;
+      padding: 28px 24px;
+      background-color: #111;
+      border: 1px solid #2e2e2e;
+      margin-bottom: 18px;
+      font-size: 0.88rem;
+      color: #888;
+      line-height: 1.6;
+      transition: background-color 0.35s, color 0.35s, border-color 0.35s;
+    }
+
+    button#styleBtn {
+      padding: 10px 22px;
+      background-color: #f0f0f0;
+      color: #111;
+      border: none;
+      cursor: pointer;
+      font-size: 0.78rem;
+      font-family: Arial, sans-serif;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    button#styleBtn:hover {
+      background-color: #cccccc;
+    }
+
+    footer {
+      padding: 28px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    footer p {
+      font-size: 0.75rem;
+      color: #444;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    footer span {
+      font-size: 0.75rem;
+      color: #333;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Labeeq Qasim</h1>
+    <button id="menuBtn">Menu</button>
+  </header>
+
+  <nav id="navMenu">
+    <a href="#">Home</a>
+    <a href="#">Games</a>
+    <a href="#">Contact</a>
+  </nav>
+
+  <section class="hero">
+    <p id="greeting"></p>
+    <h2>Hi, I am Labeeq.</h2>
+    <p class="bio">this is my website.</p>
+  </section>
+
+  <section class="games-section">
+    <h3>Games I Play</h3>
+    <div class="games">
+      <div class="game-card">
+        <h4>Elden Ring</h4>
+        <p>Action RPG</p>
+      </div>
+      <div class="game-card">
+        <h4>Valorant</h4>
+        <p>Tactical Shooter</p>
+      </div>
+      <div class="game-card">
+        <h4>Minecraft</h4>
+        <p>Sandbox</p>
+      </div>
+      <div class="game-card">
+        <h4>FIFA</h4>
+        <p>Sports</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact-section">
+    <h3>Say Hello</h3>
+    <input type="text" id="nameInput" placeholder="Your name" />
+    <p id="inputMsg">Click above to say hello.</p>
+  </section>
+
+  <section class="style-section">
+    <h3>Personalize</h3>
+    <div id="styleBox">Pick a look that fits you.</div>
+    <button id="styleBtn">Switch Style</button>
+  </section>
+
+  <footer>
+    <p>Tempe, AZ</p>
+    <span>2025</span>
+  </footer>
+
+  <script>
+
+    const hour = new Date().getHours();
+    const greetingEl = document.getElementById("greeting");
+
+    if (hour >= 5 && hour < 12) {
+      greetingEl.textContent = "Good morning.";
+    } else if (hour >= 12 && hour < 17) {
+      greetingEl.textContent = "Good afternoon.";
+    } else {
+      greetingEl.textContent = "Good evening.";
+    }
+
+
+    const menuBtn = document.getElementById("menuBtn");
+    const navMenu = document.getElementById("navMenu");
+
+    menuBtn.addEventListener("click", function() {
+      if (navMenu.style.display === "block") {
+        navMenu.style.display = "none";
+        menuBtn.textContent = "Menu";
+      } else {
+        navMenu.style.display = "block";
+        menuBtn.textContent = "Close";
+      }
+    });
+
+
+    const nameInput = document.getElementById("nameInput");
+    const inputMsg = document.getElementById("inputMsg");
+
+    nameInput.addEventListener("focus", function() {
+      inputMsg.textContent = "Go ahead and type.";
+    });
+
+    nameInput.addEventListener("blur", function() {
+      if (nameInput.value.trim() !== "") {
+        inputMsg.textContent = "Nice to meet you, " + nameInput.value.trim() + ".";
+      } else {
+        inputMsg.textContent = "Click above to say hello.";
+      }
+    });
+
+
+    const styleBtn = document.getElementById("styleBtn");
+    const styleBox = document.getElementById("styleBox");
+
+    const looks = [
+      { background: "#111", color: "#888", border: "#2e2e2e" },
+      { background: "#f0f0f0", color: "#111", border: "#ccc" },
+      { background: "#0d1f2d", color: "#7eb8d4", border: "#1a3a52" },
+      { background: "#1e1205", color: "#c8954a", border: "#3a2510" }
+    ];
+
+    let lookIndex = 0;
+
+    styleBtn.addEventListener("click", function() {
+      lookIndex = (lookIndex + 1) % looks.length;
+      styleBox.style.backgroundColor = looks[lookIndex].background;
+      styleBox.style.color = looks[lookIndex].color;
+      styleBox.style.borderColor = looks[lookIndex].border;
+    });
+
+  </script>
+
+</body>
+</html>
